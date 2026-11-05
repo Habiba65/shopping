@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | SoleStep</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header class="header">
+        <nav class="navbar container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-shoe-prints"></i>
+                <span>SoleStep</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#shop">Shop</a></li>
+                <li><a href="index.html#categories">Categories</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="#" class="icon-link wishlist-link" aria-label="Wishlist">
+                    <i class="far fa-heart"></i>
+                    <span class="wishlist-count">0</span>
+                </a>
+                <a href="#" class="icon-link" aria-label="Account">
+                    <i class="fas fa-user"></i>
+                </a>
+                <a href="#" class="icon-link cart-link" aria-label="Cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+
+            <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </nav>
+
+        <div class="mobile-search">
+            <form class="search-form" role="search">
+                <i class="fas fa-search search-icon"></i>
+                <input type="search" class="search-input" placeholder="Search shoes, boots, sneakers..." aria-label="Search products">
+                <button type="submit" class="search-btn">Search</button>
+            </form>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb container" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span><i class="fas fa-chevron-right"></i></span>
+        <a href="cart.html">Cart</a>
+        <span><i class="fas fa-chevron-right"></i></span>
+        <span>Checkout</span>
+    </nav>
+
+    <!-- Checkout Section -->
+    <section class="checkout-section section" id="checkout-section">
+        <div class="container checkout-container">
+            <div class="checkout-header">
+                <h1>Checkout</h1>
+                <p>Complete your order details below</p>
+            </div>
+
+            <div class="checkout-grid">
+                <!-- Left: Forms -->
+                <div class="checkout-forms">
+                    <form id="checkout-form" novalidate>
+
+                        <!-- Step 1: Customer Information -->
+                        <div class="checkout-step active" id="step-customer">
+                            <div class="step-header">
+                                <div class="step-number">1</div>
+                                <h2>Customer Information</h2>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="first-name">First Name <span class="required">*</span></label>
+                                    <input type="text" id="first-name" name="firstName" required placeholder="John">
+                                    <div class="error-message" id="error-first-name"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="last-name">Last Name <span class="required">*</span></label>
+                                    <input type="text" id="last-name" name="lastName" required placeholder="Doe">
+                                    <div class="error-message" id="error-last-name"></div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email Address <span class="required">*</span></label>
+                                <input type="email" id="email" name="email" required placeholder="john@example.com">
+                                <div class="error-message" id="error-email"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone Number <span class="required">*</span></label>
+                                <input type="tel" id="phone" name="phone" required placeholder="+1 (555) 000-0000">
+                                <div class="error-message" id="error-phone"></div>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Delivery Address -->
+                        <div class="checkout-step" id="step-address">
+                            <div class="step-header">
+                                <div class="step-number">2</div>
+                                <h2>Delivery Address</h2>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="address">Street Address <span class="required">*</span></label>
+                                <input type="text" id="address" name="address" required placeholder="123 Main Street">
+                                <div class="error-message" id="error-address"></div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="address2">Apartment, Suite, etc. (optional)</label>
+                                    <input type="text" id="address2" name="address2" placeholder="Apartment 4B">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="city">City <span class="required">*</span></label>
+                                    <input type="text" id="city" name="city" required placeholder="New York">
+                                    <div class="error-message" id="error-city"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="state">State / Province <span class="required">*</span></label>
+                                    <input type="text" id="state" name="state" required placeholder="NY">
+                                    <div class="error-message" id="error-state"></div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="zip">ZIP / Postal Code <span class="required">*</span></label>
+                                    <input type="text" id="zip" name="zip" required placeholder="10001">
+                                    <div class="error-message" id="error-zip"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="country">Country <span class="required">*</span></label>
+                                    <select id="country" name="country" required>
+                                        <option value="">Select Country</option>
+                                        <option value="US">United States</option>
+                                        <option value="CA">Canada</option>
+                                        <option value="GB">United Kingdom</option>
+                                        <option value="AU">Australia</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                    <div class="error-message" id="error-country"></div>
+                                </div>
+                            </div>
+
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="same-billing" name="sameBilling">
+                                <label for="same-billing">Billing address is the same as delivery address</label>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Payment Method -->
+                        <div class="checkout-step" id="step-payment">
+                            <div class="step-header">
+                                <div class="step-number">3</div>
+                                <h2>Payment Method</h2>
+                            </div>
+
+                            <div class="payment-options">
+                                <label class="payment-option">
+                                    <input type="radio" name="paymentMethod" value="credit" checked>
+                                    <div class="payment-option-content">
+                                        <i class="fas fa-credit-card"></i>
+                                        <div>
+                                            <strong>Credit / Debit Card</strong>
+                                            <span>Secure payment via Visa, MasterCard, Amex</span>
+                                        </div>
+                                    </div>
+                                </label>
+
+                                <label class="payment-option">
+                                    <input type="radio" name="paymentMethod" value="paypal">
+                                    <div class="payment-option-content">
+                                        <i class="fab fa-paypal"></i>
+                                        <div>
+                                            <strong>PayPal</strong>
+                                            <span>Pay securely with your PayPal account</span>
+                                        </div>
+                                    </div>
+                                </label>
+
+                                <label class="payment-option">
+                                    <input type="radio" name="paymentMethod" value="cod">
+                                    <div class="payment-option-content">
+                                        <i class="fas fa-money-bill-wave"></i>
+                                        <div>
+                                            <strong>Cash on Delivery</strong>
+                                            <span>Pay when your order arrives</span>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <!-- Card details (shown when credit card selected) -->
+                            <div id="card-fields" class="payment-fields">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="card-name">Name on Card <span class="required">*</span></label>
+                                        <input type="text" id="card-name" name="cardName" placeholder="John Doe">
+                                        <div class="error-message" id="error-card-name"></div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="card-number">Card Number <span class="required">*</span></label>
+                                    <input type="text" id="card-number" name="cardNumber" required placeholder="1234 5678 9012 3456" maxlength="19">
+                                    <div class="error-message" id="error-card-number"></div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="card-expiry">Expiry Date <span class="required">*</span></label>
+                                        <input type="text" id="card-expiry" name="cardExpiry" required placeholder="MM/YY" maxlength="5">
+                                        <div class="error-message" id="error-card-expiry"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="card-cvv">CVV <span class="required">*</span></label>
+                                        <input type="text" id="card-cvv" name="cardCvv" required placeholder="123" maxlength="3">
+                                        <div class="error-message" id="error-card-cvv"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step Navigation -->
+                        <div class="step-navigation">
+                            <button type="button" class="btn btn-outline btn-prev" id="btn-prev" style="display: none;">
+                                <i class="fas fa-arrow-left"></i> Back
+                            </button>
+                            <button type="button" class="btn btn-primary btn-next" id="btn-next">
+                                Next <i class="fas fa-arrow-right"></i>
+                            </button>
+                            <button type="submit" class="btn btn-primary btn-place-order" id="btn-place-order" style="display: none;">
+                                <i class="fas fa-credit-card"></i> Place Order
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+
+                <!-- Right: Order Summary -->
+                <div class="checkout-summary">
+                    <div class="summary-card">
+                        <h2>Order Summary</h2>
+
+                        <div class="summary-items" id="summary-items">
+                            <!-- Cart items injected by JS -->
+                        </div>
+
+                        <div class="summary-divider"></div>
+
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span id="summary-subtotal">$0.00</span>
+                        </div>
+
+                        <div class="summary-row">
+                            <span>Shipping</span>
+                            <span class="shipping-free">Free</span>
+                        </div>
+
+                        <div class="summary-row summary-total">
+                            <span>Total</span>
+                            <span id="summary-total">$0.00</span>
+                        </div>
+
+                        <div class="summary-note">
+                            <i class="fas fa-info-circle"></i>
+                            <span>No charges will be made until your order ships.</span>
+                        </div>
+
+                        <div class="summary-trust">
+                            <div class="trust-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Secure Checkout</span>
+                            </div>
+                            <div class="trust-item">
+                                <i class="fas fa-undo"></i>
+                                <span>30-Day Returns</span>
+                            </div>
+                            <div class="trust-item">
+                                <i class="fas fa-truck-fast"></i>
+                                <span>Fast Delivery</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-shoe-prints"></i>
+                    <span>SoleStep</span>
+                </a>
+                <p>Premium footwear for every step of your journey.</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Shop</h4>
+                <ul>
+                    <li><a href="index.html#shop">All Products</a></li>
+                    <li><a href="index.html#categories">Categories</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Shipping & Returns</a></li>
+                    <li><a href="#">Order Tracking</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom container">
+            <p>&copy; <span id="year">2026</span> SoleStep. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Checkout Script -->
+    <script src="js/checkout.js"></script>
+</body>
+</html>

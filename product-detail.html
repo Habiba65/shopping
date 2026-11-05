@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details | SoleStep</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header class="header">
+        <nav class="navbar container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-shoe-prints"></i>
+                <span>SoleStep</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#shop">Shop</a></li>
+                <li><a href="index.html#categories">Categories</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="#" class="icon-link wishlist-link" aria-label="Wishlist">
+                    <i class="far fa-heart"></i>
+                    <span class="wishlist-count">0</span>
+                </a>
+                <a href="#" class="icon-link" aria-label="Account">
+                    <i class="fas fa-user"></i>
+                </a>
+                <a href="#" class="icon-link cart-link" aria-label="Cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+
+            <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </nav>
+
+        <div class="mobile-search">
+            <form class="search-form" role="search">
+                <i class="fas fa-search search-icon"></i>
+                <input type="search" class="search-input" placeholder="Search shoes, boots, sneakers..." aria-label="Search products">
+                <button type="submit" class="search-btn">Search</button>
+            </form>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb container" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span><i class="fas fa-chevron-right"></i></span>
+        <a href="index.html#shop">Shop</a>
+        <span><i class="fas fa-chevron-right"></i></span>
+        <span id="breadcrumb-product">Product</span>
+    </nav>
+
+    <!-- Product Details Section -->
+    <section class="product-detail section" id="product-detail">
+        <div class="container product-detail-grid">
+            <!-- Image Gallery -->
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img id="main-product-img" src="" alt="" class="main-img">
+                    <button class="zoom-btn" aria-label="Zoom image">
+                        <i class="fas fa-search-plus"></i>
+                    </button>
+                </div>
+                <div class="thumbnail-list">
+                    <div class="thumbnail active" data-img="">
+                        <img src="" alt="">
+                    </div>
+                    <div class="thumbnail" data-img="">
+                        <img src="" alt="">
+                    </div>
+                    <div class="thumbnail" data-img="">
+                        <img src="" alt="">
+                    </div>
+                    <div class="thumbnail" data-img="">
+                        <img src="" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Info -->
+            <div class="product-info">
+                <span class="product-detail-category" id="detail-category">Category</span>
+                <h1 id="detail-name">Product Name</h1>
+
+                <div class="product-detail-rating">
+                    <div class="stars" id="detail-stars"></div>
+                    <span class="review-count" id="detail-review-count">(0 reviews)</span>
+                </div>
+
+                <div class="product-detail-pricing">
+                    <span class="current-price" id="detail-price">$0.00</span>
+                    <span class="original-price" id="detail-original-price">$0.00</span>
+                    <span class="discount-badge" id="detail-discount-badge">-0%</span>
+                </div>
+
+                <p class="product-detail-desc" id="detail-description">
+                    Premium quality product description goes here.
+                </p>
+
+                <!-- Size Selection -->
+                <div class="selection-group">
+                    <label class="selection-label">Size</label>
+                    <div class="size-options" id="size-options">
+                        <!-- Sizes injected by JS -->
+                    </div>
+                </div>
+
+                <!-- Color Selection -->
+                <div class="selection-group">
+                    <label class="selection-label">Color</label>
+                    <div class="color-options" id="color-options">
+                        <!-- Colors injected by JS -->
+                    </div>
+                </div>
+
+                <!-- Quantity Selector -->
+                <div class="selection-group">
+                    <label class="selection-label">Quantity</label>
+                    <div class="quantity-selector">
+                        <button class="qty-btn qty-decrease" aria-label="Decrease quantity">-</button>
+                        <input type="number" class="qty-input" value="1" min="1" max="99" aria-label="Quantity">
+                        <button class="qty-btn qty-increase" aria-label="Increase quantity">+</button>
+                    </div>
+                </div>
+
+                <!-- Add to Cart -->
+                <button class="btn btn-primary btn-add-to-cart" id="btn-add-to-cart" data-id="">
+                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                </button>
+
+                <div class="purchase-note">
+                    <i class="fas fa-truck-fast"></i>
+                    <span>Free shipping on orders over $50</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="related-products section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">You May Also Like</h2>
+                <p class="section-subtitle">Complete your look</p>
+            </div>
+            <div class="product-grid" id="related-product-grid">
+                <!-- Related products injected by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-shoe-prints"></i>
+                    <span>SoleStep</span>
+                </a>
+                <p>Premium footwear for every step of your journey.</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Shop</h4>
+                <ul>
+                    <li><a href="index.html#shop">All Products</a></li>
+                    <li><a href="index.html#categories">Categories</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Shipping & Returns</a></li>
+                    <li><a href="#">Order Tracking</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom container">
+            <p>&copy; <span id="year">2026</span> SoleStep. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Product Detail Script -->
+    <script src="js/detail.js"></script>
+</body>
+</html>
